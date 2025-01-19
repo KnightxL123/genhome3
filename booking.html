@@ -66,6 +66,10 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" class="form-control" required>
+                    </div>
+                    <div class="form-group">
                         <label for="paxNumber">Pax Number:</label>
                         <input type="number" id="paxNumber" name="paxNumber" class="form-control" required>
                     </div>
@@ -91,6 +95,7 @@
                 userContact: document.getElementById('userContact').value,
                 userEmail: document.getElementById('userEmail').value,
                 packageSelection: document.getElementById('packageSelection').value,
+                location: document.getElementById('location').value,
                 paxNumber: document.getElementById('paxNumber').value,
                 checkinDate: document.getElementById('checkinDate').value,
                 checkoutDate: document.getElementById('checkoutDate').value
