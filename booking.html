@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+         body {
+            background-color: #f7f7f7;
+            background-image: url('./assets/images/house.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .booking-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #143957;
+            border-color: #2e608a;
+        }
+    </style>
+</head>
+<body>
+    <section id="booking-section" class="booking-section">
+        <div class="container">
+            <div class="booking-form">
+                <div class="text-center">
+                    <a href="../../index.html">
+                        <img src="./assets/images/Havenly.svg" alt="Gen Home Logo" style="max-width: 150px; margin-bottom: 20px;">
+                    </a>
+                </div>
+                <h2 class="text-center">Confirm Your Booking</h2>
+                <form id="bookingForm" onsubmit="handleBooking(event)">
+                    <div class="form-group">
+                        <label for="userName">Name:</label>
+                        <input type="text" id="userName" name="userName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userAge">Age:</label>
+                        <input type="number" id="userAge" name="userAge" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userContact">Contact No.:</label>
+                        <input type="tel" id="userContact" name="userContact" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" name="userEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="packageSelection">Selected Package:</label>
+                        <select id="packageSelection" name="packageSelection" class="form-control">
+                            <option value="modernMinimalist">Modern Minimalist</option>
+                            <option value="traditionalFamily">Traditional Family</option>
+                            <option value="industrialLoft">Industrial Loft</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="paxNumber">Pax Number:</label>
+                        <input type="number" id="paxNumber" name="paxNumber" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinDate">Check-in Date:</label>
+                        <input type="date" id="checkinDate" name="checkinDate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutDate">Check-out Date:</label>
+                        <input type="date" id="checkoutDate" name="checkoutDate" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        function handleBooking(event) {
+            event.preventDefault();
+            const bookingData = {
+                userName: document.getElementById('userName').value,
+                userAge: document.getElementById('userAge').value,
+                userContact: document.getElementById('userContact').value,
+                userEmail: document.getElementById('userEmail').value,
+                packageSelection: document.getElementById('packageSelection').value,
+                paxNumber: document.getElementById('paxNumber').value,
+                checkinDate: document.getElementById('checkinDate').value,
+                checkoutDate: document.getElementById('checkoutDate').value
+            };
+            localStorage.setItem('bookingData', JSON.stringify(bookingData));
+            window.location.href = 'confirmation.html';
+            
+        }
+    </script>
+</body>
+</html>
