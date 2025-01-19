@@ -47,11 +47,12 @@
                     <p><strong>Contact No.:</strong> <span id="userContact"></span></p>
                     <p><strong>Email:</strong> <span id="userEmail"></span></p>
                     <p><strong>Selected Package:</strong> <span id="packageSelection"></span></p>
+                    <p><strong>Location:</strong> <span id="location"></span></p>
                     <p><strong>Pax Number:</strong> <span id="paxNumber"></span></p>
                     <p><strong>Check-in Date:</strong> <span id="checkinDate"></span></p>
                     <p><strong>Check-out Date:</strong> <span id="checkoutDate"></span></p>
                 </div>
-                <button class="btn btn-primary btn-block" onclick="window.location.href='../../index.html'">Go Back to Homepage</button>
+                <button class="btn btn-primary btn-block" onclick="window.location.href='index.html'">Go Back to Homepage</button>
             </div>
         </div>
     </section>
@@ -64,6 +65,7 @@
                 document.getElementById('userContact').textContent = bookingData.userContact;
                 document.getElementById('userEmail').textContent = bookingData.userEmail;
                 document.getElementById('packageSelection').textContent = bookingData.packageSelection;
+                document.getElementById('location').textContent = bookingData.location;
                 document.getElementById('paxNumber').textContent = bookingData.paxNumber;
                 document.getElementById('checkinDate').textContent = bookingData.checkinDate;
                 document.getElementById('checkoutDate').textContent = bookingData.checkoutDate;
