@@ -67,11 +67,11 @@
                   </div>
                 </div>
               </form>
-
-              <div id="form-message-warning mt-4"></div> 
-              <div id="form-message-success">
-                Your message was sent, thank you!
-              </div>
+    </div>
+<div id="form-message-warning" class="mt-4" style="display: none; color: red;">Please fill out all required fields.</div>
+<div id="form-message-success" style="display: none; color: green;">
+  Your message was sent, thank you!
+</div>
             </div>
           </div>
         </div>
@@ -79,8 +79,28 @@
     </div>
 
   </div>
+
+                      
     
+    <script>
+  // Function to handle form success
+  function showSuccessMessage() {
+    // Hide the warning message (if any)
+    document.getElementById("form-message-warning").style.display = "none";
     
+    // Show the success message
+    const successMessage = document.getElementById("form-message-success");
+    successMessage.style.display = "block";
+    
+    // Redirect to index.html after 3 seconds
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 3000); // 3000 ms = 3 seconds
+  }
+
+  // Example trigger (you can integrate this into your form submission logic)
+  // Call showSuccessMessage() when the form submission is successful
+</script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
