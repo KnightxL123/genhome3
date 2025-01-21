@@ -80,27 +80,33 @@
 
   </div>
 
-                      
-    
-    <script>
-  // Function to handle form success
-  function showSuccessMessage() {
-    // Hide the warning message (if any)
-    document.getElementById("form-message-warning").style.display = "none";
-    
-    // Show the success message
+         <script>
+  // Function to handle success
+  function handleSuccess() {
+    document.getElementById("form-message-warning").style.display = "none"; // Hide warning
     const successMessage = document.getElementById("form-message-success");
-    successMessage.style.display = "block";
-    
+    successMessage.style.display = "block"; // Show success message
+
     // Redirect to index.html after 3 seconds
     setTimeout(() => {
       window.location.href = "index.html";
-    }, 3000); // 3000 ms = 3 seconds
+    }, 3000);
   }
 
-  // Example trigger (you can integrate this into your form submission logic)
-  // Call showSuccessMessage() when the form submission is successful
-</script>
+  // Function to handle error
+  function handleError() {
+    const warningMessage = document.getElementById("form-message-warning");
+    warningMessage.style.display = "block"; // Show error message
+    warningMessage.innerText = "Something went wrong when submitting. Please try again.";
+    document.getElementById("form-message-success").style.display = "none"; // Hide success message
+  }
+
+  // Example usage (simulating success or error for demo)
+  // Call `handleSuccess()` on successful form submission
+  // Call `handleError()` if something goes wrong
+</script>             
+    
+
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
